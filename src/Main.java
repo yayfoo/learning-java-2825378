@@ -1,11 +1,12 @@
-public class Main {
-
+public class Main{
     public static void main(String[] args) {
-        StudentProfile profileOne = new StudentProfile("Sally", "Salmon", "Film", 3.75, 2022);
-        StudentProfile profileTwo = new StudentProfile("Max", "Tiffen", "Computer Science", 3.45, 2021);
+        StudentProfile studentA = new StudentProfile("Anna", "Anderson", 14.5, 2025, false);
+        StudentProfile studentB = new StudentProfile("Bengt", "Hansson", 12.3, 2026, false);
 
-        profileTwo.incrementExpectedGraduationYear();
-        System.out.println(profileTwo.expectedYearToGraduate);
-    }
-
+        studentA.print();
+        studentB.print();
+        studentA.incrementExpectedGradYearByOne();
+        studentA.print();
+        studentB.print();
+}
 }
