@@ -1,24 +1,12 @@
 public class Main {
 
-    public static double salaryCalculator(double hoursPerWeek,
-                                          double amountPerHour,
-                                          int vacationDays) {
-        if (hoursPerWeek < 0) {
-            return -1;
-        }
-
-        if (amountPerHour < 0) {
-            return -1;
-        }
-
-        double weeklyPaycheck = hoursPerWeek * amountPerHour;
-        double unpaidTime = vacationDays * amountPerHour * 8;
-        return (weeklyPaycheck * 52) - unpaidTime;
+    public static double calculate_yearly_salary(double hours_per_week, double cost_per_hour, int vacation_days){
+        int weeks_per_year = 52;
+        int vacation_hours_per_day = 8;
+        return (weeks_per_year * hours_per_week - vacation_days * vacation_hours_per_day) * cost_per_hour;
     }
-
-    public static void main(String[] args) {
-        double salary = salaryCalculator(40, 15, 8);
-        System.out.println(salary);
+    public static void main(String[] args){
+        double gross_salary = calculate_yearly_salary(40, 812, 40);
+        System.out.println("Your yearly salary is " + gross_salary);
     }
-
 }
